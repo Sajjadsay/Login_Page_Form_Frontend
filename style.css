@@ -1,0 +1,259 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(images/bkgrd-img13.jpg) no-repeat;
+    background-size: cover;
+    position: center;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.saylogo img {
+    height: 55px;
+    width: 58px;
+    margin-top: 0.5rem;
+    border: 2px transparent;
+    border-radius: 10%;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 40px;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.5s ;
+}
+
+.navbar a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.navbar .btnlogin {
+    height: 50px;
+    width: 130px;
+    font-size: 1.2rem;
+    background-color: transparent;
+    border: 3px solid white;
+    border-radius: 0.5rem;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+    margin-left: 40px;
+    transition: 0.5s;
+}
+
+.navbar .btnlogin:hover {
+    background-color: white;
+    color: black;
+}
+
+.wrapper {
+    position: relative;
+    height: 23rem;
+    width: 21rem;
+    background-color: transparent;
+    border: 2px solid rgb(255,255,255,0.5);
+    border-radius: 1.25rem;
+    backdrop-filter: blur(1.25rem);
+    box-shadow: 4px 4px 4px rgba(225,225,225, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(0);
+    transition: transform 0.5s ease, hieght 0.3s ease;
+}
+
+.wrapper.activebtnlogin{
+    transform: scale(1);
+}
+
+.wrapper.active{
+    height: 27.5rem;
+}
+
+.wrapper.formbox {
+    width: 100%;
+    padding: 40px;
+}
+
+.login{
+    transition: transform 0.2s ease;
+    transform: translateX(0);
+}
+
+.wrapper.active .login{
+    transition: none;
+    transform: translateX(-300px);
+}
+
+.register{
+    position: absolute;
+    transition: none;
+    transform: translateX(300px);
+}
+
+.wrapper.active .register{
+    transition: transform 0.2s ease;
+    transform: translateX(0);
+}
+
+.wrapper .iconclose{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background: #097878;
+    font-size: 2rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 1.3rem;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.formbox h2 {
+    font-size: 2rem;
+    text-align: center;
+    color: #097878;
+}
+
+.inputbox {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #097878;
+    margin: 30px 0;
+}
+
+.inputbox label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #097878;
+    font-weight: 550;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.inputbox input:focus~label,
+.inputbox input:valid~label{
+    top: -4px;
+}
+
+.inputbox input {
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: #097878;
+    font-weight: 550;
+    padding: 0 35px 0 5px;
+}
+
+.inputbox .icon {
+    position: absolute;
+    right: 8px;
+    line-height: 57px;
+    color: #097878;
+}
+
+.remember-forgot{
+    font-size: 0.85rem;
+    color: #097878;
+    font-weight: 500;
+    margin: -15px 0 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    accent-color: #097878;
+    margin-right: 3px;
+    font-weight: 550;
+}
+
+.remember-forgot a{
+    color: #097878;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover{
+    text-decoration: underline;
+}
+
+.btnsubmit{
+    height: 35px;
+    width: 100%;
+    background-color: #097878;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    margin-top: 10px;
+}
+
+.login-register {
+    font-size: 0.85rem;
+    color: #097878;
+    font-weight: 500;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.login-register p a{
+    color: #097878;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-register p a:hover{
+    text-decoration: underline;
+}
